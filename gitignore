@@ -1,12 +1,9 @@
-# Build artifacts
 *.o
 engine
 render.ppm
 
 main.o
 
-# Mac system files
 .DS_Store
 
-# VS Code
 .vscode/
