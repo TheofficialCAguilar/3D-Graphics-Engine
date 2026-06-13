@@ -22,5 +22,5 @@ public:
     int removeTransformationsOfType(const std::string& type);
 };
  
-#endif 
+#endif  
 

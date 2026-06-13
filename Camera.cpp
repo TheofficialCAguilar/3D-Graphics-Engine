@@ -85,3 +85,4 @@ void Camera::getProjectionMatrix(float out[16], float aspect) const
     out[11] = -1.0f;
     out[14] = -(2.0f * fa * n) / (fa - n);
 }
+ 

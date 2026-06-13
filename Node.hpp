@@ -22,3 +22,4 @@ private:
     Node<ItemType>* next_;
 };
 #endif
+ 

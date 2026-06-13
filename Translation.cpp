@@ -10,4 +10,4 @@ Vector3D Translation::apply(const Vector3D& point) const {
 
 std::string Translation::getType() const {
     return "TRANSLATE";
-}
+} 

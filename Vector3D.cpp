@@ -58,3 +58,4 @@ bool Vector3D::operator==(const Vector3D& other) const
            std::abs(y_ - other.y_) < epsilon &&
            std::abs(z_ - other.z_) < epsilon;
 }
+ 

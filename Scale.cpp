@@ -10,4 +10,4 @@ Vector3D Scale::apply(const Vector3D& point) const {
 
 std::string Scale::getType() const {
     return "SCALE";
-}
+} 

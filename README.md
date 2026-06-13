@@ -76,30 +76,6 @@ Drop any `.bmp` file in the project folder named `texture.bmp`, then press **T**
 | `T` | Toggle texture on/off |
 | `ESC` | Quit |
 
----
-
-## Project Structure
-
-```
-3d-graphics-engine/
-├── shaders/
-│   ├── vertex.glsl       # GLSL vertex shader
-│   └── fragment.glsl     # GLSL Phong lighting fragment shader
-├── Engine.cpp            # Main game loop and scene
-├── Shader.hpp/.cpp       # GLSL shader loader
-├── Camera.hpp/.cpp       # First-person camera
-├── Mesh.hpp/.cpp         # OBJ loader + GPU upload
-├── Renderer.hpp/.cpp     # Software PPM renderer
-├── Vector3D.hpp/.cpp     # 3D math (P1)
-├── Rotation*.hpp/.cpp    # Rotation types (P2)
-├── RotationRegistry      # ArrayBag of rotations (P3)
-├── Translation/Scale     # Transform types (P4)
-├── TransformPipeline     # Linked list pipeline (P5)
-├── SpatialRegistry       # BST spatial index (P6)
-└── Makefile
-```
-
----
 
 ## Built With
 

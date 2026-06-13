@@ -19,4 +19,4 @@ private:
     double factor_;
 };
 
-#endif
+#endif 

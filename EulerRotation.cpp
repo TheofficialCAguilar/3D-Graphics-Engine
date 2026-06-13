@@ -22,3 +22,4 @@ double EulerRotation::getYaw() const
 {
     return yaw_;
 }
+ 

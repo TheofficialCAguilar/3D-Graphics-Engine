@@ -58,3 +58,4 @@ std::vector<Transformation*> SceneLoader::loadScene(const std::string& filename)
 
     return transformations;
 }
+ 

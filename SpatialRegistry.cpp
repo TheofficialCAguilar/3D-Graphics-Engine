@@ -83,3 +83,4 @@ void SpatialRegistry::frustumHelper(SpatialNode* node, double min, double max,st
         frustumHelper(node->getRight(), min, max, result);
     }
 }
+ 

@@ -17,3 +17,4 @@ double AxisAngleRotation::getAngle() const
 {
     return angle_;
 }
+ 

@@ -84,3 +84,4 @@ ItemType LinkedList<ItemType>::getEntry(int position) const {
     return ptr->getItem();
 }
 #endif
+  

@@ -155,3 +155,4 @@ bool Renderer::writePPM(const std::string& filename) const
               << "  (" << width_ << "x" << height_ << ")\n";
     return true;
 }
+ 

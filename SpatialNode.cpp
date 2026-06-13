@@ -39,3 +39,4 @@ void SpatialNode::setRight(SpatialNode* right) {
 }
 
 
+ 

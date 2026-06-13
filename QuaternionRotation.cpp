@@ -27,3 +27,4 @@ double QuaternionRotation::getZ() const
 {
     return z_;
 }
+ 

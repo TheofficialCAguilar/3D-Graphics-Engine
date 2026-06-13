@@ -190,3 +190,4 @@ void Mesh::upload(const std::vector<Vertex>& verts,
 
     glBindVertexArray(0);
 }
+ 

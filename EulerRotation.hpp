@@ -23,3 +23,4 @@ public:
 
     double getYaw() const;
 };
+

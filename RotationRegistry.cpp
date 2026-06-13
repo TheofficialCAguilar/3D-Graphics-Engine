@@ -42,3 +42,4 @@ double RotationRegistry::getAverageMagnitude()const {
     }
     return totalMagnitude / count;
 }
+ 

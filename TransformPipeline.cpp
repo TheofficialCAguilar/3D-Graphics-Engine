@@ -64,3 +64,4 @@ int TransformPipeline::removeTransformationsOfType(const std::string& type) {
  
     return removed;
 }
+ 

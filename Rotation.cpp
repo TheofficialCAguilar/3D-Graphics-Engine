@@ -13,3 +13,4 @@ std::string Rotation::getType() const
 Rotation::~Rotation() {}
 
 
+ 
