@@ -1,9 +1,4 @@
-/*
-@file SceneLoader.cpp
-@name Carlos Aguilar
-@date 03/30/2026
-@brief SceneLoader Class Initialization
-*/
+// Carlos Aguilar
 
 #include "SceneLoader.hpp"
 #include "Translation.hpp"
@@ -12,11 +7,6 @@
 #include <fstream>
 #include <sstream>
 
-/**
- * @brief Loads a scene from a CSV file and creates transformation objects.
- * @param filename The file containing transformation commands.
- * @return A vector of Transformation pointers.
- */
 
 std::vector<Transformation*> SceneLoader::loadScene(const std::string& filename) {
 

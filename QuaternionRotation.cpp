@@ -1,5 +1,4 @@
 // Carlos Aguilar
-// 02/25/2026
 
 #include "QuaternionRotation.hpp"
 

@@ -1,20 +1,11 @@
-/*
-@file SpatialRegistry.cpp
-@name Carlos Aguilar
-@date 04/27/2026
-@brief Implementation of the SpatialRegistry class, which manages a binary search tree
-of SpatialNode objects and supports insertion, querying, and traversal of 3D points
-based on their magnitude.
-*/
+// Carlos Aguilar
 
 #include "SpatialRegistry.hpp"
 #include <cmath>
 #include <vector>
 
-// Initializes an empty BST
 SpatialRegistry::SpatialRegistry() : root_(nullptr) {}
 
-// Frees all dynamically allocated nodes
 SpatialRegistry::~SpatialRegistry() {
     clearTree(root_);
 }

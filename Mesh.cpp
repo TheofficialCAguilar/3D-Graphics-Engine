@@ -1,7 +1,4 @@
-/*
- * @file Mesh.cpp
- * @name Carlos Aguilar
- */
+// Carlos Aguilar
 
 #include "Mesh.hpp"
 #include <fstream>
@@ -30,40 +27,30 @@ void Mesh::draw() const
     glBindVertexArray(0);
 }
 
-// ─────────────────────────────────────────────
-// Built-in cube: 24 unique vertices (4 per face,
-// each with its own normal), 36 indices
-// ─────────────────────────────────────────────
 void Mesh::buildCube()
 {
     std::vector<Vertex> verts = {
-        // pos              normal         uv
-        // Front  (z=+1)
+
         {-1,-1, 1,  0, 0, 1,  0,0},
         { 1,-1, 1,  0, 0, 1,  1,0},
         { 1, 1, 1,  0, 0, 1,  1,1},
         {-1, 1, 1,  0, 0, 1,  0,1},
-        // Back   (z=-1)
         { 1,-1,-1,  0, 0,-1,  0,0},
         {-1,-1,-1,  0, 0,-1,  1,0},
         {-1, 1,-1,  0, 0,-1,  1,1},
         { 1, 1,-1,  0, 0,-1,  0,1},
-        // Left   (x=-1)
         {-1,-1,-1, -1, 0, 0,  0,0},
         {-1,-1, 1, -1, 0, 0,  1,0},
         {-1, 1, 1, -1, 0, 0,  1,1},
         {-1, 1,-1, -1, 0, 0,  0,1},
-        // Right  (x=+1)
         { 1,-1, 1,  1, 0, 0,  0,0},
         { 1,-1,-1,  1, 0, 0,  1,0},
         { 1, 1,-1,  1, 0, 0,  1,1},
         { 1, 1, 1,  1, 0, 0,  0,1},
-        // Top    (y=+1)
         {-1, 1, 1,  0, 1, 0,  0,0},
         { 1, 1, 1,  0, 1, 0,  1,0},
         { 1, 1,-1,  0, 1, 0,  1,1},
         {-1, 1,-1,  0, 1, 0,  0,1},
-        // Bottom (y=-1)
         {-1,-1,-1,  0,-1, 0,  0,0},
         { 1,-1,-1,  0,-1, 0,  1,0},
         { 1,-1, 1,  0,-1, 0,  1,1},
@@ -79,10 +66,6 @@ void Mesh::buildCube()
     upload(verts, idx);
 }
 
-// ─────────────────────────────────────────────
-// Simple .obj loader (positions + normals + UVs)
-// Handles v / vn / vt / f lines only
-// ─────────────────────────────────────────────
 bool Mesh::loadOBJ(const std::string& path)
 {
     std::ifstream file(path);
@@ -111,7 +94,6 @@ bool Mesh::loadOBJ(const std::string& path)
             float u,v; ss>>u>>v;
             uvData.insert(uvData.end(),{u,v});
         } else if (token == "f") {
-            // f v/vt/vn  (each face can be tri or quad)
             std::vector<std::string> faceTokens;
             std::string t;
             while (ss >> t) faceTokens.push_back(t);
@@ -130,12 +112,10 @@ bool Mesh::loadOBJ(const std::string& path)
                 if(s>>c) try { ni = std::stoi(c)-1; } catch(...) {}
             };
 
-            // Triangulate (fan for quads)
             for (int i = 1; i+1 < (int)faceTokens.size(); i++) {
                 int pIdx[3], tIdx[3], nIdx[3];
                 std::string corners[3] = {faceTokens[0], faceTokens[i], faceTokens[i+1]};
                 for (int k = 0; k < 3; k++) {
-                    // parse corners[k]
                     std::string tok = corners[k];
                     for (char& ch : tok) if (ch == '/') ch = ' ';
                     std::istringstream ts(tok);
@@ -174,12 +154,6 @@ bool Mesh::loadOBJ(const std::string& path)
     return true;
 }
 
-// ─────────────────────────────────────────────
-// Upload vertex + index data to GPU
-// Layout: location 0 = position (vec3)
-//         location 1 = normal   (vec3)
-//         location 2 = uv       (vec2)
-// ─────────────────────────────────────────────
 void Mesh::upload(const std::vector<Vertex>& verts,
                   const std::vector<unsigned int>& indices)
 {
@@ -201,15 +175,15 @@ void Mesh::upload(const std::vector<Vertex>& verts,
                  indices.size() * sizeof(unsigned int),
                  indices.data(), GL_STATIC_DRAW);
 
-    // position
+    
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex),
                           (void*)offsetof(Vertex, x));
     glEnableVertexAttribArray(0);
-    // normal
+    
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex),
                           (void*)offsetof(Vertex, nx));
     glEnableVertexAttribArray(1);
-    // uv
+    
     glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex),
                           (void*)offsetof(Vertex, u));
     glEnableVertexAttribArray(2);

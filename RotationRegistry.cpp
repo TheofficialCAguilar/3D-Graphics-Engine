@@ -1,10 +1,4 @@
-//
-//  RotationRegistry.cpp
-//  Rotation project 3
-//
-//  Created by Carlos Aguilar on 3/11/26.
-//
-
+// Carlos Aguilar
 
 #include "RotationRegistry.hpp"
 #include <vector>

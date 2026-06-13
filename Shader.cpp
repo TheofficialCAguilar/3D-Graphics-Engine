@@ -1,7 +1,4 @@
-/*
- * @file Shader.cpp
- * @name Carlos Aguilar
- */
+// Carlos Aguilar
 
 #include "Shader.hpp"
 #include <fstream>
@@ -10,7 +7,6 @@
 
 Shader::Shader(const std::string& vertexPath, const std::string& fragmentPath)
 {
-    // ── Read source files ─────────────────────
     std::string vertCode, fragCode;
     std::ifstream vFile(vertexPath), fFile(fragmentPath);
 
@@ -31,19 +27,16 @@ Shader::Shader(const std::string& vertexPath, const std::string& fragmentPath)
     const char* vSrc = vertCode.c_str();
     const char* fSrc = fragCode.c_str();
 
-    // ── Compile vertex shader ─────────────────
     GLuint vert = glCreateShader(GL_VERTEX_SHADER);
     glShaderSource(vert, 1, &vSrc, nullptr);
     glCompileShader(vert);
     checkCompileErrors(vert, "VERTEX");
 
-    // ── Compile fragment shader ───────────────
     GLuint frag = glCreateShader(GL_FRAGMENT_SHADER);
     glShaderSource(frag, 1, &fSrc, nullptr);
     glCompileShader(frag);
     checkCompileErrors(frag, "FRAGMENT");
 
-    // ── Link program ──────────────────────────
     ID = glCreateProgram();
     glAttachShader(ID, vert);
     glAttachShader(ID, frag);

@@ -1,7 +1,5 @@
-# ─────────────────────────────────────────────
 #  3D Graphics Engine — Makefile (OpenGL + SDL2)
 #  Carlos Aguilar
-# ─────────────────────────────────────────────
 
 CXX      = g++
 CXXFLAGS = -std=c++17 -Wall \

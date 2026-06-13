@@ -1,3 +1,5 @@
+// Carlos Aguilar
+
 #ifndef TRANSFORMATION_HPP
 #define TRANSFORMATION_HPP
 
@@ -8,7 +10,7 @@ class Transformation {
 public:
     virtual ~Transformation() = default;
     virtual Vector3D apply(const Vector3D& point) const = 0;
-    virtual std::string getType() const = 0; // Required for filtering
+    virtual std::string getType() const = 0; 
 };
 
 #endif

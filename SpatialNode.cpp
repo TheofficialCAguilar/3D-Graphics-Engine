@@ -1,15 +1,8 @@
-/*
-@file SpatialNode.cpp
-@name Carlos Aguilar
-@date 04/27/2026
-@brief Implementation of the SpatialNode class, which represents a node in a binary search tree
-storing a 3D point and its precomputed magnitude, along with pointers to left and right children.
-*/
+// Carlos Aguilar
 
 #include "SpatialNode.hpp"
 #include <cmath>
 
-// Initializes point, children, and computes magnitude
 SpatialNode::SpatialNode(const Vector3D& pt)
 : point_(pt), left_(nullptr), right_(nullptr) {
     

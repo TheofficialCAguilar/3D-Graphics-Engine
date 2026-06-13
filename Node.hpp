@@ -1,7 +1,5 @@
-/**
- * @file Node.hpp
- * @brief Standard Node class for Linked List.
- */
+// Carlos Aguilar
+
 #ifndef NODE_HPP
 #define NODE_HPP
 

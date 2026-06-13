@@ -1,7 +1,4 @@
-/**
- * @file Translation.hpp
- * @brief Concrete class for moving points in space.
- */
+// Carlos Aguilar
 
 #ifndef TRANSLATION_HPP
 #define TRANSLATION_HPP
@@ -11,10 +8,7 @@
 
 class Translation : public Transformation {
 public:
-    /**
-     * @param tx, ty, tz: The displacement values.
-     * @post: Initializes the internal offset vector.
-     */
+
     Translation(double tx, double ty, double tz);
 
     Vector3D apply(const Vector3D& point) const override;

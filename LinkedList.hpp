@@ -1,7 +1,5 @@
-/**
- * @file LinkedList.hpp
- * @brief Standard Linked List Template.
- */
+// Carlos Aguilar
+
 #ifndef LINKED_LIST_HPP
 #define LINKED_LIST_HPP
 
@@ -26,5 +24,5 @@ protected:
     int itemCount_;
 };
 
-#include "LinkedList.cpp" // Include implementation for templates
+#include "LinkedList.cpp" 
 #endif

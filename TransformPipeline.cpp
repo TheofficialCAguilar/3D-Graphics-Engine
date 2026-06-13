@@ -1,27 +1,11 @@
-/*
-@file TransformPipeline.cpp
-@name Carlos Aguilar
-@date 04/21/2026
-@brief Implementation of the TransformPipeline class, which manages and applies
-a sequence of 3D transformations using a linked list.
-*/
+// Carlos Aguilar
 
 #include "TransformPipeline.hpp"
  
-/**
- * @param transform: A pointer to a Transformation object.
- * @post: The transformation is appended to the end of the pipeline.
- */
-
 void TransformPipeline::enqueueTransform(Transformation* transform) {
     insert(itemCount_ + 1, transform);
 }
  
-/**
- * @param point: A reference to a Vector3D to be transformed.
- * @post: The first transformation is applied to the point, removed from the pipeline, and deleted.
- *        If the pipeline is empty, the point is unchanged.
- */
 
 void TransformPipeline::processNextTransform(Vector3D& point) {
     if (isEmpty()) {
@@ -34,11 +18,6 @@ void TransformPipeline::processNextTransform(Vector3D& point) {
     delete first;
 }
  
-/**
- * @param point: A reference to a Vector3D to be transformed.
- * @post: All transformations are applied to the point sequentially.
- *        The pipeline remains unchanged.
- */
 
 void TransformPipeline::runFullPipeline(Vector3D& point) {
     int length = getLength();
@@ -47,10 +26,6 @@ void TransformPipeline::runFullPipeline(Vector3D& point) {
     }
 }
  
-/**
- * @post: The order of all transformations in the pipeline is reversed.
- *        Example: [T1 -> T2 -> S1] becomes [S1 -> T2 -> T1]
- */
 
 void TransformPipeline::reversePipeline() {
     if (itemCount_ <= 1) {
@@ -71,11 +46,6 @@ void TransformPipeline::reversePipeline() {
     headPtr_ = prev;
 }
  
-/**
- * @param type: The string type to remove (e.g., "SCALE" or "TRANSLATE").
- * @post: All transformations matching the given type are removed from the pipeline and deleted.
- * @return: The number of transformations removed.
- */
 
 int TransformPipeline::removeTransformationsOfType(const std::string& type) {
     int removed = 0;

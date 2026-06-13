@@ -1,14 +1,4 @@
-/*
- * @file Renderer.hpp
- * @name Carlos Aguilar
- * @brief A software PPM renderer. Projects 3D points onto a 2D canvas
- *        and writes the result to a .ppm image file (open with Mac Preview).
- *
- *        Uses your existing Vector3D, TransformPipeline, and SpatialRegistry.
- *
- *        Phase 1 of the visual engine — no external dependencies.
- *        Future phases will replace this with OpenGL + SDL2.
- */
+// Carlos Aguilar
 
 #ifndef RENDERER_HPP
 #define RENDERER_HPP
@@ -19,19 +9,16 @@
 #include <vector>
 #include <string>
 
-// ── Simple RGB pixel ──────────────────────────────────────
 struct Color {
     int r, g, b;
     Color(int r = 0, int g = 0, int b = 0) : r(r), g(g), b(b) {}
 };
 
-// ── A 3D edge: two vertex indices into a vertex list ──────
 struct Edge {
     int a, b;
     Edge(int a, int b) : a(a), b(b) {}
 };
 
-// ── A 3D mesh: vertices + edges for wireframe drawing ─────
 struct Mesh {
     std::vector<Vector3D> vertices;
     std::vector<Edge>     edges;
