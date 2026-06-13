@@ -3,6 +3,8 @@
 engine
 render.ppm
 
+main.o
+
 # Mac system files
 .DS_Store
 
